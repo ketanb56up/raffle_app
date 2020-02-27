@@ -11,6 +11,11 @@
     <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :raffle %>
+    <%= f.collection_select(:raffle_id, Raffle.all, :id, :name, {}, {class: 'form-control'}) %>
+  </div>
+
   <% if devise_mapping.rememberable? %>
     <div class="form-group form-check">
       <%= f.check_box :remember_me, class: 'form-check-input' %>
